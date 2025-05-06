@@ -185,6 +185,20 @@
 //	show_message("Não come nada");
 //}
 
+is_ungry = show_question("Você está com fome ?")
+current_money = get_integer("Quanto dinheiro você tem ?", "");
+has_credit_card = show_question("Tem cartão de crédito ?");
+if(is_ungry && (current_money >= 5 || has_credit_card)){
+	show_message("Come um hot dog");
+	
+	if(current_money >= 5){
+		current_money -= 5;
+		show_message("Saldo atual é " + string(current_money));
+	}
+}else{
+	show_message("Não come nada");
+}
+
 #endregion
 
 game_end();
